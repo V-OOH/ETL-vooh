@@ -1,2 +1,3 @@
 # Ignorar o venv
 .venv
+.env
