@@ -11,9 +11,7 @@ s3 = boto3.client('s3',
     aws_session_token=os.getenv('AWS_SESSION_TOKEN')
     ) 
 
-bucket_name = 'vooh-bucket'
-s3_file_key = 'raw/dados.csv'
-local_file_path = 'src/dados.csv'
 
-s3.download_file(bucket_name, s3_file_key, local_file_path)
+s3.download_file('vooh-bucket','raw/dados.csv','data/dados.csv')
+s3.download_file('vooh-bucket','raw/processos.csv','data/processos.csv')
 print("Download concluído com sucesso!")

@@ -3,7 +3,7 @@ import csv
 vetorDados = []
 vetorTratado = []
 
-with open('src/dados.csv' , 'r', encoding='utf-8') as arquivo:
+with open('data/dados.csv' , 'r', encoding='utf-8') as arquivo:
     leitura = csv.DictReader(arquivo)
 
     for linha in leitura:
@@ -26,6 +26,7 @@ with open('src/dados.csv' , 'r', encoding='utf-8') as arquivo:
             'frequencia_min_ghz': round(float(linha['frequencia_min']) / 1000, 2),
             'frequencia_max_ghz': round(float(linha['frequencia_max']) / 1000, 2),
             'frequencia_atual_ghz': round(float(linha['frequencia_atual']) / 1000, 2),
+            'cpu_percentual': float(linha['cpu_percentual']),
 
             #Converter dados de RAM
             'ram_total_gb': round(float(linha['ram_total']) / (1024 ** 3),2),
@@ -41,9 +42,38 @@ with open('src/dados.csv' , 'r', encoding='utf-8') as arquivo:
         }
         vetorTratado.append(dado_tratado)
 
+vetorProcessos = []
+vProcessosTratados = []
+
+with open('data/processos.csv' , 'r', encoding='utf-8') as arquivo:
+    leitura = csv.DictReader(arquivo)
+
+    for linha in leitura:
+        valoresProcessos = list(linha.values())
+        vetorProcessos.append(valoresProcessos)
+
+        processosTratados = {
+            "pid": linha['pid'],
+            'usuario': linha['usuario'],
+            'nomeProcesso': linha['nome'],
+            'usoMemoriaProcesso': round(int(linha['memoria']) / (1024 ** 2), 2),
+            'usoCpuProcesso': linha['uso_cpu'],
+            'mac': linha['mac'],
+            'ip': linha['ip']
+        }
+        vProcessosTratados.append(processosTratados)
+
+
 colunas = list(vetorTratado[0].keys())
 
 with open('dadosTratados.csv', 'w', newline='', encoding='utf-8') as arq:
     writer = csv.DictWriter(arq, fieldnames=colunas)
     writer.writeheader()
     writer.writerows(vetorTratado)
+
+
+colunas = list(vProcessosTratados[0].keys())
+with open('processosTratados.csv', 'w', newline='', encoding='utf-8') as arq:
+    writer = csv.DictWriter(arq, fieldnames=colunas)
+    writer.writeheader()
+    writer.writerows(vProcessosTratados)

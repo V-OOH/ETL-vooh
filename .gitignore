@@ -1,3 +1,9 @@
 # Ignorar o venv
 .venv
 .env
+.vscode
+
+processosTratados.csv
+dados.csv
+processos.csv
+dados_dashboard.json
