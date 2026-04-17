@@ -1,3 +1,9 @@
-data_hora,total_disco_gb,disco_usado_gb,disco_livre_gb,disco_percentual,processador_nome,nucleos_fiscos,nucleos_totais,frequencia_min_ghz,frequencia_max_ghz,frequencia_atual_ghz,cpu_percentual,ram_total_gb,ram_disponivel_gb,ram_percentual,upload_mb,download_mb,mac,ip
-15-04-2026 00:45:40,459.98,373.66,86.31,81.2,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,0.0,1.8,1.8,12.0,15.35,4.01,73.8,289.64,215.94,E0-2B-E9-6D-2E-C3,192.168.100.34
-15-04-2026 00:45:53,459.98,373.66,86.31,81.2,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,0.0,1.8,1.8,5.4,15.35,4.03,73.8,289.83,216.0,E0-2B-E9-6D-2E-C3,192.168.100.34
+data_hora,total_disco_gb,disco_usado_gb,disco_livre_gb,disco_percentual,processador_nome,nucleos_fiscos,nucleos_totais,frequencia_max_ghz,frequencia_atual_ghz,cpu_percentual,ram_total_gb,ram_disponivel_gb,ram_percentual,upload_mb,download_mb,mac,ip
+16-04-2026 22:23,459.98,369.9,90.08,80.4,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,1.8,1.8,14.1,15.35,4.87,68.3,41.8,1002.35,E0-2B-E9-6D-2E-C3,192.168.100.34
+16-04-2026 22:23,459.98,369.9,90.08,80.4,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,1.8,1.8,13.7,15.35,4.85,68.4,41.86,1006.78,E0-2B-E9-6D-2E-C3,192.168.100.34
+16-04-2026 22:24,459.98,369.9,90.08,80.4,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,1.8,1.8,12.3,15.35,4.85,68.4,41.9,1011.51,E0-2B-E9-6D-2E-C3,192.168.100.34
+16-04-2026 22:24,459.98,369.9,90.08,80.4,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,1.8,1.8,13.3,15.35,4.86,68.4,41.94,1015.21,E0-2B-E9-6D-2E-C3,192.168.100.34
+16-04-2026 22:24,459.98,369.9,90.08,80.4,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,1.8,1.8,13.4,15.35,4.81,68.7,41.99,1015.75,E0-2B-E9-6D-2E-C3,192.168.100.34
+16-04-2026 23:53,459.98,373.42,86.55,81.2,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,1.8,1.8,10.3,15.35,3.4,77.8,206.05,1282.7,E0-2B-E9-6D-2E-C3,192.168.100.34
+16-04-2026 23:55,459.98,373.42,86.55,81.2,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,1.8,1.8,3.8,15.35,3.36,78.1,206.09,1282.74,E0-2B-E9-6D-2E-C3,192.168.100.34
+16-04-2026 23:56,459.98,373.42,86.55,81.2,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,1.8,1.8,3.6,15.35,3.44,77.6,206.15,1282.77,E0-2B-E9-6D-2E-C3,192.168.100.34

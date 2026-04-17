@@ -1,6 +1,5 @@
 import csv
 from datetime import datetime
-from operator import itemgetter
 
 
 def truncar_minuto(data_hora_str):
@@ -9,13 +8,13 @@ def truncar_minuto(data_hora_str):
 
 vetorTratado = []
 
-with open('data/dados.csv' , 'r', encoding='utf-8') as arquivo:
+with open('data/dados_16_04_2026_D0001.csv' , 'r', encoding='utf-8') as arquivo:
     leitura = csv.DictReader(arquivo)
 
     for linha in leitura:
         
         dado_tratado = {
-            'data_hora': linha['data_hora'],
+            'data_hora': truncar_minuto(linha['data_hora']),
             
             #Converter dados de disco
             'total_disco_gb': round(int(linha['total_disco']) / (1024 ** 3), 2),
@@ -27,7 +26,7 @@ with open('data/dados.csv' , 'r', encoding='utf-8') as arquivo:
             'processador_nome': linha['processador_nome'],
             'nucleos_fiscos': linha['nucleos_fiscos'],
             'nucleos_totais': linha['nucleos_totais'],
-            'frequencia_min_ghz': round(float(linha['frequencia_min']) / 1000, 2),
+            #'frequencia_min_ghz': round(float(linha['frequencia_min']) / 1000, 2),
             'frequencia_max_ghz': round(float(linha['frequencia_max']) / 1000, 2),
             'frequencia_atual_ghz': round(float(linha['frequencia_atual']) / 1000, 2),
             'cpu_percentual': float(linha['cpu_percentual']),
@@ -48,18 +47,18 @@ with open('data/dados.csv' , 'r', encoding='utf-8') as arquivo:
 
 vProcessosTratados = []
 
-with open('data/processos.csv' , 'r', encoding='utf-8') as arquivo:
+with open('data/processos_16_04_2026_D0001.csv' , 'r', encoding='utf-8') as arquivo:
     leitura = csv.DictReader(arquivo)
 
     for linha in leitura:
         
 
         processosTratados = {
-            'data_hora': linha['data_hora'],
+            'data_hora': truncar_minuto(linha['data_hora']),
             "pid": linha['pid'],
             'usuario': linha['usuario'],
             'nomeProcesso': linha['nome'],
-            'usoMemoriaProcesso': round(int(linha['memoria']) / (1024 ** 2), 2),
+            'usoMemoriaProcessoMB': round(int(linha['memoria']) / (1024 ** 2), 2),
             'usoCpuProcesso': linha['uso_cpu'],
             'mac': linha['mac'],
             'ip': linha['ip']
@@ -82,20 +81,35 @@ with open('processosTratados.csv', 'w', newline='', encoding='utf-8') as arq:
     writer.writerows(vProcessosTratados)
 
 
+#Pega o top5 processo que mais usa ram ordenados do maior para o menor
+processos_por_maquina = {}
 
-# Top 5 por RAM
-top5_ram = sorted(vProcessosTratados, key=itemgetter('usoMemoriaProcesso'), reverse=True)[:5]
+for processo in vProcessosTratados:
+    chave = (processo['mac'], processo['ip'], processo['data_hora'])
 
-# Junta os dois sem repetir
-processos_relevantes = list({p['pid']: 
-                             p for p in top5_ram}.values())
+    if chave not in processos_por_maquina:
+        processos_por_maquina[chave] = []
+
+    processos_por_maquina[chave].append(processo)
+
+processos_relevantes = []
+
+for chave, lista in processos_por_maquina.items():
+    top5 = sorted(
+        lista,
+        key=lambda p: p['usoMemoriaProcessoMB'],
+        reverse=True
+    )[:5]
+
+    processos_relevantes.extend(top5)
+
 
 # Junta os dois vetores pelo mac e ip
 vetorFinal = []
 
 for processo in processos_relevantes:
     for dado in vetorTratado:
-        if processo['mac'] == dado['mac'] and processo['ip'] == dado['ip']and truncar_minuto(processo['data_hora']) == truncar_minuto(dado['data_hora']):
+        if processo['mac'] == dado['mac'] and processo['ip'] == dado['ip']and processo['data_hora'] == dado['data_hora']:
             linha_final = {**dado, **processo}
             vetorFinal.append(linha_final)
 
@@ -105,5 +119,3 @@ with open('dadosFinais.csv', 'w', newline='', encoding='utf-8') as arq:
     writer = csv.DictWriter(arq, fieldnames=colunas)
     writer.writeheader()
     writer.writerows(vetorFinal)
-
-    
