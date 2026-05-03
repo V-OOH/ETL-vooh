@@ -1,11 +1,17 @@
 # Ignorar o venv
 .venv
+
+# Ignorar arquivos .env
 .env
+
+# Ignorar o diretório .vscode
 .vscode
 
-processosTratados.csv
-dados.csv
-processos.csv
-dados_dashboard.json
-dadosTratados.csv
-dadosFinais.csv
+# Ignorar o diretório .idea
+.idea
+
+# Ignorar os arquivos .CSV
+*.csv
+
+# Ignorar os arquivos .JSON
+*.json
