@@ -3,10 +3,8 @@ from datetime import datetime
 import boto3
 import os
 from io import BytesIO, StringIO
-from zoneinfo import ZoneInfo
 
-
-hoje = datetime.now(ZoneInfo("America/Sao_Paulo")).strftime('%d_%m_%Y')
+hoje = datetime.now().strftime('%d_%m_%Y')
 
 BUCKET = 'vooh-bucket'
 PREFIXO_RAW = 'raw/'
@@ -149,10 +147,6 @@ def criarNovoCsv():
     except FileNotFoundError as erro:
         print(erro)
 
-def lambda_handler(event, context):
-    criarNovoCsv()
-    # TODO implement
-    return {
-        'statusCode': 200,
-        'body': 'Transform executado com sucesso!'
-    }
+
+criarNovoCsv()
+
