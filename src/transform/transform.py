@@ -2,13 +2,14 @@ import pandas as pd
 from datetime import datetime
 import boto3
 import os
+from dotenv import load_dotenv
 from io import BytesIO, StringIO
-from zoneinfo import ZoneInfo
 
+load_dotenv()
 
-hoje = datetime.now(ZoneInfo("America/Sao_Paulo")).strftime('%d_%m_%Y')
+hoje = datetime.now().strftime('%d_%m_%Y')
 
-BUCKET = 'vooh-bucket'
+BUCKET = os.getenv('AWS_BUCKET_NAME')
 PREFIXO_RAW = 'raw/'
 PREFIXO_TRUSTED = 'trusted/'
 
@@ -64,22 +65,20 @@ def truncar_minuto(coluna):
 
 
 def enviarCsv(df, nomeArquivo):
-    buffer = StringIO()
+            buffer = StringIO()
 
-    df.to_csv(
-        buffer,
-        index=False,
-        encoding='utf-8'
-    )
+            df.to_csv(
+                buffer,
+                index=False,
+                encoding='utf-8'
+            )
 
-    s3.put_object(
-        Bucket=BUCKET,
-        Key=f'{PREFIXO_TRUSTED}{nomeArquivo}',
-        Body=buffer.getvalue(),
-        ContentType='text/csv'
-    )
-    
- 
+            s3.put_object(
+                Bucket=BUCKET,
+                Key=f'{PREFIXO_TRUSTED}{nomeArquivo}',
+                Body=buffer.getvalue(),
+                ContentType='text/csv'
+            )
 
 
 #Fiz uma tratativa de erro pra ficar mais profissional
@@ -149,10 +148,8 @@ def criarNovoCsv():
     except FileNotFoundError as erro:
         print(erro)
 
-def lambda_handler(event, context):
-    criarNovoCsv()
-    # TODO implement
-    return {
-        'statusCode': 200,
-        'body': 'Transform executado com sucesso!'
-    }
+
+
+criarNovoCsv()
+
+    
