@@ -1,0 +1,161 @@
+[
+    {
+        "idDisplay": 1,
+        "idEmpresa": 1,
+        "macAddres": "E0-2B-E9-6D-2E-C3",
+        "dataHora": "18-05-2026 20:45",
+        "cpu%": 11.4,
+        "ram%": 63.3,
+        "ramTotal": 15.35,
+        "ramUsada": 9.71,
+        "disco%": 82.4,
+        "total_disco_gb": 459.98,
+        "disco_usado_gb": 378.99,
+        "upload_mb": 54.02,
+        "download_mb": 428.81,
+        "top5processos": [
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 498.72,
+                "usoCpuProcesso": 49.8
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 497.96,
+                "usoCpuProcesso": 21.6
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 497.73,
+                "usoCpuProcesso": 35.8
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 496.82,
+                "usoCpuProcesso": 67.9
+            },
+            {
+                "pid": 19120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "EpicWebHelper.exe",
+                "usoMemoriaProcesso": 298.73,
+                "usoCpuProcesso": 0.6
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 498.72,
+                "usoCpuProcesso": 49.8
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 497.96,
+                "usoCpuProcesso": 21.6
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 497.73,
+                "usoCpuProcesso": 35.8
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 496.82,
+                "usoCpuProcesso": 67.9
+            },
+            {
+                "pid": 19120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "EpicWebHelper.exe",
+                "usoMemoriaProcesso": 298.73,
+                "usoCpuProcesso": 0.6
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 498.72,
+                "usoCpuProcesso": 49.8
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 497.96,
+                "usoCpuProcesso": 21.6
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 497.73,
+                "usoCpuProcesso": 35.8
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 496.82,
+                "usoCpuProcesso": 67.9
+            },
+            {
+                "pid": 19120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "EpicWebHelper.exe",
+                "usoMemoriaProcesso": 298.73,
+                "usoCpuProcesso": 0.6
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 498.72,
+                "usoCpuProcesso": 49.8
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 497.96,
+                "usoCpuProcesso": 21.6
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 497.73,
+                "usoCpuProcesso": 35.8
+            },
+            {
+                "pid": 15120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "Discord.exe",
+                "usoMemoriaProcesso": 496.82,
+                "usoCpuProcesso": 67.9
+            },
+            {
+                "pid": 19120,
+                "usuario": "DESKTOP-L723IV1",
+                "nomeProcesso": "EpicWebHelper.exe",
+                "usoMemoriaProcesso": 298.73,
+                "usoCpuProcesso": 0.6
+            }
+        ]
+    }
+
+    
+]

@@ -48,9 +48,12 @@ def csvS3(prefixo_arquivo):
 
         df = pd.read_csv(
             BytesIO(conteudo),
-            encoding='utf-8'
+            encoding='utf-8',
+            skipinitialspace=True
         )
 
+        df.columns = df.columns.str.strip()
+        
         lista_csvs.append(df)
 
     return pd.concat(lista_csvs, ignore_index=True)
@@ -88,10 +91,15 @@ def criarNovoCsv():
         csvDados = csvS3('dados_')
         csvProcessos = csvS3('processos_')
 
-
+       
     #Diferente da biblioteca CSV, o Pandas faz o tratamento por colunas, evitando a necessidade de uso do For
         dados = pd.DataFrame({
+             
+             
             'data_hora': truncar_minuto(csvDados['data_hora']),
+            'idEmpresa': csvDados['id_empresa'],
+            'idDisplay': csvDados['id_display'],
+            'idZona': csvDados['id_zona'],
 
      #Converter dados de disco
             'total_disco_gb': (csvDados['total_disco'].astype(int) / (1024 ** 3)).round(2),
@@ -115,15 +123,28 @@ def criarNovoCsv():
     #Converter os dados de rede
             'upload_mb': (csvDados['upload'].astype(int) / (1024 ** 2)).round(2),
             'download_mb': (csvDados['download'].astype(int) / (1024 ** 2)).round(2),
+            'errin': csvDados['errin'],
+            'dropin': csvDados['dropin'],
+            'mtu': csvDados['mtu'],
+            'latencia': csvDados['latencia'],
+            'conn_established': csvDados['conn_established'],
+            'conn_listen': csvDados['conn_listen'],
+            'conn_time_wait': csvDados['conn_time_wait'],
+            'conn_close_wait': csvDados['conn_close_wait'],
+            'conn_syn_sent': csvDados['conn_syn_sent'],
 
             'mac': csvDados['mac'],
-            'ip': csvDados['ip']
+            'ip': csvDados['ip'],
+            'boot_time': csvDados['boot_time']
         })
 
 
     #Tratamento dos processos
         processos = pd.DataFrame({
                 'data_hora': truncar_minuto(csvProcessos['data_hora']),
+                'idEmpresa': csvProcessos['id_empresa'],
+                'idDisplay': csvProcessos['id_display'],
+                'idZona': csvProcessos['id_zona'],
                 'pid': csvProcessos['pid'],
                 'usuario': csvProcessos['usuario'],
                 'nomeProcesso': csvProcessos['nome'],
@@ -133,21 +154,20 @@ def criarNovoCsv():
                 'ip': csvProcessos['ip']
         })
 
+        for idEmpresa, dadosEmpresa in dados.groupby('idEmpresa'):
+            arquivoDados = f'dados_empresa{idEmpresa}_{hoje}.csv'
+            enviarCsv(dadosEmpresa, arquivoDados)
 
-        arquivoDados = f'dados_tratados_{hoje}.csv'
-        arquivoProcessos = f'processos_tratados_{hoje}.csv'
-
-        enviarCsv(dados, arquivoDados)
-        enviarCsv(processos, arquivoProcessos)
+        for idEmpresa, processosEmpresa in processos.groupby('idEmpresa'):
+            arquivoProcessos = f'processos_empresa{idEmpresa}_{hoje}.csv'
+            enviarCsv(processosEmpresa, arquivoProcessos)
+        
 
         print("Tratamento de dados finalizado com sucesso!")
 
 
-        
-    
     except FileNotFoundError as erro:
         print(erro)
-
 
 
 criarNovoCsv()

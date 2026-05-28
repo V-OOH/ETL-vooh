@@ -1,0 +1,5 @@
+data_hora,total_disco_gb,disco_usado_gb,disco_livre_gb,disco_percentual,processador_nome,nucleos_fiscos,nucleos_totais,frequencia_max_ghz,frequencia_atual_ghz,cpu_percentual,ram_total_gb,ram_disponivel_gb,ram_percentual,upload_mb,download_mb,mac,ip
+18-05-2026 20:45,459.98,378.99,80.98,82.4,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,1.8,1.8,11.4,15.35,5.64,63.3,54.02,428.81,E0-2B-E9-6D-2E-C3,192.168.100.34
+18-05-2026 20:45,459.98,378.99,80.98,82.4,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,1.8,1.8,12.4,15.35,5.58,63.6,54.13,431.3,E0-2B-E9-6D-2E-C3,192.168.100.34
+18-05-2026 20:45,459.98,378.99,80.98,82.4,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,1.8,1.8,10.0,15.35,5.63,63.3,54.18,433.38,E0-2B-E9-6D-2E-C3,192.168.100.34
+18-05-2026 20:45,459.98,378.99,80.98,82.4,"AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",8,16,1.8,1.8,11.1,15.35,5.54,63.9,54.25,434.53,E0-2B-E9-6D-2E-C3,192.168.100.34
