@@ -135,7 +135,10 @@ def criarNovoCsv():
 
             'mac': csvDados['mac'],
             'ip': csvDados['ip'],
-            'boot_time': csvDados['boot_time']
+            'boot_time': csvDados['boot_time'],
+            'temperatura_atual': csvDados['temperatura_atual'],
+            'temperatura_alta': csvDados['temperatura_alta'],
+            'temperatura_critica': csvDados['temperatura_critica']
         })
 
 
