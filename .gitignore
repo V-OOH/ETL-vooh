@@ -3,6 +3,8 @@
 .env
 .vscode
 
+*.csv
+
 processosTratados.csv
 dados.csv
 processos.csv
