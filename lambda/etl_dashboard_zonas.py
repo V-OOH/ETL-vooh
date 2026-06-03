@@ -313,9 +313,9 @@ ORDER BY ultima_referencia DESC
     conexao.close()
 
     thresholds_por_empresa: dict = {
-        "cpu":      {"max": 50},
-        "ram":      {"max": 50},
-        "disco":    {"max": 50},
+        "cpu":      {"max": 49.0},
+        "ram":      {"max": 59.0},
+        "disco":    {"max": 59.0},
         "latencia": {"max": 20},
     }
 
