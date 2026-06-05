@@ -5,19 +5,13 @@ import pandas as pd
 from io import StringIO
 from datetime import datetime
 
-# ── Cliente S3 ───────────────────────────────────────────────────────────────
+
 s3     = boto3.client('s3')  
 BUCKET = os.environ['AWS_BUCKET_NAME']
 
-# s3     = boto3.client(
-#     's3',
-#     aws_access_key_id     = os.getenv('AWS_ACCESS_KEY_ID'),
-#     aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY'),
-#     aws_session_token     = os.getenv('AWS_SESSION_TOKEN')
-# )
-
-# BUCKET = os.getenv('AWS_BUCKET_NAME')
 hoje   = datetime.now().strftime('%d_%m_%Y')
+
+
 
 def formatarVelocidade(bps):
     if bps >= 1_073_741_824:
@@ -32,7 +26,8 @@ def formatarVelocidade(bps):
 def lambda_handler(event, context):  
     hoje = datetime.now().strftime('%d_%m_%Y')
 
-    # ── Lê CSV do S3 ─────────────────────────────────────────────────────────
+
+
     resposta = s3.list_objects_v2(Bucket=BUCKET, Prefix='trusted/')
     csvDados = None
 
@@ -50,7 +45,9 @@ def lambda_handler(event, context):
     if csvDados is None:
         raise FileNotFoundError(f"Nenhum CSV de hoje ({hoje}) encontrado em trusted/")
 
-    # ── Preparo ───────────────────────────────────────────────────────────────
+
+
+
     csvDados['data_hora'] = pd.to_datetime(csvDados['data_hora'], format='mixed', dayfirst=True)
     csvDados = csvDados.sort_values(['idDisplay', 'data_hora']).reset_index(drop=True)
     csvDados = csvDados.drop_duplicates(subset=['idDisplay', 'data_hora']).reset_index(drop=True)
@@ -62,7 +59,9 @@ def lambda_handler(event, context):
         lambda s: s != s.shift(1)
     )
 
-    # ── Delta de rede ────────────────────────────────────────────
+
+
+
     resultados = []
     for _, grupo in csvDados.groupby('idDisplay'):
         grupo = grupo.copy()
@@ -82,7 +81,9 @@ def lambda_handler(event, context):
     csvDados['download_mbs'] = csvDados['download_bps'].round(4)
     csvDados['upload_mbs']   = csvDados['upload_bps'].round(4)
 
-    # ── Geração de JSON  ──────────────────────────────────
+
+
+
     for idEmpresa in csvDados['idEmpresa'].unique():
         dfEmpresa = csvDados[csvDados['idEmpresa'] == idEmpresa].copy()
         novoJson  = {}
