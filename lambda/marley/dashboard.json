@@ -1,0 +1,347 @@
+{
+  "periodos": {
+    "semanal": {
+      "saude_operacional": {
+        "nota": 80,
+        "status": "degradada",
+        "variacao_pts": -20,
+        "label_variacao": "-20 pts vs 7 dias atrás"
+      },
+      "uptime": {
+        "atual_pct": 99.38,
+        "meta_pct": 95.0,
+        "delta_meta": 4.38,
+        "label_delta": "▲ 4.38% acima da meta"
+      },
+      "downtime": {
+        "atual_min": 62,
+        "formatado": "1h 02min",
+        "variacao_min": 62,
+        "label_variacao": "▲ 1h que no período anterior",
+        "projecao_min": 124,
+        "projecao_fmt": "2h 04min"
+      },
+      "risco_operacional": {
+        "nivel": "alto",
+        "dias_para_violacao": 49,
+        "label": "Em 49 dias no ritmo atual"
+      },
+      "mttr": {
+        "medio_min": 2779.2,
+        "melhor_min": 2210.6,
+        "pior_min": 3911.1,
+        "meta_min": 45,
+        "melhor_zona": {
+          "zona": 1,
+          "mttr_min": 2779.2
+        },
+        "pior_zona": {
+          "zona": 1,
+          "mttr_min": 2779.2
+        }
+      },
+      "incidentes": {
+        "abertos": 11,
+        "fechados": 3,
+        "percentual_dentro_sla": 0.0
+      },
+      "grafico_disponibilidade": {
+        "labels": [
+          "2026-05-30",
+          "2026-05-31",
+          "2026-06-01",
+          "2026-06-02",
+          "2026-06-03",
+          "2026-06-04",
+          "2026-06-05",
+          "2026-06-06"
+        ],
+        "real": [
+          100.0,
+          100.0,
+          97.85,
+          100.0,
+          97.85,
+          100.0,
+          100.0,
+          100.0
+        ],
+        "projecao": [
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "zonas": [
+        {
+          "zona": "Zona 1",
+          "indice_risco": "baixo",
+          "reincidencias": 2,
+          "downtime": {
+            "minutos": 62,
+            "formatado": "1h 02min"
+          },
+          "disponibilidade": {
+            "atual_percentual": 99.38,
+            "anterior_percentual": 100.0,
+            "variacao_percentual": -0.62,
+            "tendencia": "piora"
+          },
+          "displays": {
+            "total": 1,
+            "afetados": 1
+          },
+          "tendencia_eventos": {
+            "real": [
+              1,
+              1
+            ],
+            "projecao": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    "duas_semanas": {
+      "saude_operacional": {
+        "nota": 80,
+        "status": "degradada",
+        "variacao_pts": -20,
+        "label_variacao": "-20 pts vs 14 dias atrás"
+      },
+      "uptime": {
+        "atual_pct": 99.69,
+        "meta_pct": 95.0,
+        "delta_meta": 4.69,
+        "label_delta": "▲ 4.69% acima da meta"
+      },
+      "downtime": {
+        "atual_min": 62,
+        "formatado": "1h 02min",
+        "variacao_min": 62,
+        "label_variacao": "▲ 1h que no período anterior",
+        "projecao_min": 124,
+        "projecao_fmt": "2h 04min"
+      },
+      "risco_operacional": {
+        "nivel": "alto",
+        "dias_para_violacao": 213,
+        "label": "Em 213 dias no ritmo atual"
+      },
+      "mttr": {
+        "medio_min": 2779.2,
+        "melhor_min": 2210.6,
+        "pior_min": 3911.1,
+        "meta_min": 45,
+        "melhor_zona": {
+          "zona": 1,
+          "mttr_min": 2779.2
+        },
+        "pior_zona": {
+          "zona": 1,
+          "mttr_min": 2779.2
+        }
+      },
+      "incidentes": {
+        "abertos": 11,
+        "fechados": 3,
+        "percentual_dentro_sla": 0.0
+      },
+      "grafico_disponibilidade": {
+        "labels": [
+          "2026-05-30",
+          "2026-05-31",
+          "2026-06-01",
+          "2026-06-02",
+          "2026-06-03",
+          "2026-06-04",
+          "2026-06-05",
+          "2026-06-06"
+        ],
+        "real": [
+          100.0,
+          100.0,
+          97.85,
+          100.0,
+          97.85,
+          100.0,
+          100.0,
+          100.0
+        ],
+        "projecao": [
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "zonas": [
+        {
+          "zona": "Zona 1",
+          "indice_risco": "baixo",
+          "reincidencias": 2,
+          "downtime": {
+            "minutos": 62,
+            "formatado": "1h 02min"
+          },
+          "disponibilidade": {
+            "atual_percentual": 99.69,
+            "anterior_percentual": 100.0,
+            "variacao_percentual": -0.31,
+            "tendencia": "piora"
+          },
+          "displays": {
+            "total": 1,
+            "afetados": 1
+          },
+          "tendencia_eventos": {
+            "real": [
+              1,
+              1
+            ],
+            "projecao": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    "mensal": {
+      "saude_operacional": {
+        "nota": 80,
+        "status": "degradada",
+        "variacao_pts": -20,
+        "label_variacao": "-20 pts vs 30 dias atrás"
+      },
+      "uptime": {
+        "atual_pct": 99.86,
+        "meta_pct": 95.0,
+        "delta_meta": 4.86,
+        "label_delta": "▲ 4.86% acima da meta"
+      },
+      "downtime": {
+        "atual_min": 62,
+        "formatado": "1h 02min",
+        "variacao_min": 62,
+        "label_variacao": "▲ 1h que no período anterior",
+        "projecao_min": 124,
+        "projecao_fmt": "2h 04min"
+      },
+      "risco_operacional": {
+        "nivel": "alto",
+        "dias_para_violacao": 1015,
+        "label": "Em 1015 dias no ritmo atual"
+      },
+      "mttr": {
+        "medio_min": 2779.2,
+        "melhor_min": 2210.6,
+        "pior_min": 3911.1,
+        "meta_min": 45,
+        "melhor_zona": {
+          "zona": 1,
+          "mttr_min": 2779.2
+        },
+        "pior_zona": {
+          "zona": 1,
+          "mttr_min": 2779.2
+        }
+      },
+      "incidentes": {
+        "abertos": 11,
+        "fechados": 3,
+        "percentual_dentro_sla": 0.0
+      },
+      "grafico_disponibilidade": {
+        "labels": [
+          "2026-05-30",
+          "2026-05-31",
+          "2026-06-01",
+          "2026-06-02",
+          "2026-06-03",
+          "2026-06-04",
+          "2026-06-05",
+          "2026-06-06"
+        ],
+        "real": [
+          100.0,
+          100.0,
+          97.85,
+          100.0,
+          97.85,
+          100.0,
+          100.0,
+          100.0
+        ],
+        "projecao": [
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "zonas": [
+        {
+          "zona": "Zona 1",
+          "indice_risco": "baixo",
+          "reincidencias": 2,
+          "downtime": {
+            "minutos": 62,
+            "formatado": "1h 02min"
+          },
+          "disponibilidade": {
+            "atual_percentual": 99.86,
+            "anterior_percentual": 100.0,
+            "variacao_percentual": -0.14,
+            "tendencia": "piora"
+          },
+          "displays": {
+            "total": 1,
+            "afetados": 1
+          },
+          "tendencia_eventos": {
+            "real": [
+              1,
+              1
+            ],
+            "projecao": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "ultima_atualizacao": "06/06/2026 17:45:14",
+  "jira": {
+    "incidentes": {
+      "abertos": 11,
+      "fechados": 3,
+      "percentual_dentro_sla": 0.0
+    },
+    "mttr": {
+      "medio_min": 2779.2,
+      "melhor_min": 2210.6,
+      "pior_min": 3911.1,
+      "meta_min": 45,
+      "melhor_zona": {
+        "zona": 1,
+        "mttr_min": 2779.2
+      },
+      "pior_zona": {
+        "zona": 1,
+        "mttr_min": 2779.2
+      }
+    }
+  }
+}
